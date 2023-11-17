@@ -1,30 +1,102 @@
-import re
-import tkinter
-win=tkinter.Tk()
-win.title("Teja")
-win.geometry("1000x1000")
-f1=tkinter.Label(win,text="Registration Form",font=("arial",28)).place(x="600",y="40")
-f1=tkinter.Label(win,text="Firstname:",font=("arial",20)).place(x="550",y="100")
-f2=tkinter.Entry(win).place(x=800,y=110)
-f1=tkinter.Label(win,text="Lastname:",font=("arial",20)).place(x="550",y="140")
-f2=tkinter.Entry(win).place(x=800,y=150)
-f1=tkinter.Label(win,text="Email:",font=("arial",20)).place(x="550",y="170")
-f2=tkinter.Entry(win).place(x=800,y=180)
-f1=tkinter.Label(win,text="Password:",font=("arial",20)).place(x="550",y="200")
-f2=tkinter.Entry(win).place(x=800,y=210)
-f1=tkinter.Label(win,text="Re-TypePassword:",font=("arial",20)).place(x="550",y="230")
-f2=tkinter.Entry(win).place(x=800,y=240)
-f1=tkinter.Label(win,text="Gender:",font=("arial",20)).place(x="550",y="270")
-Var=tkinter.IntVar()
-f2=tkinter.Radiobutton(win,text="Male",value=1,variable=Var).place(x=800,y=280)
-f2=tkinter.Radiobutton(win,text="Female",value=2,variable=Var).place(x=850,y=280)
-f1=tkinter.Label(win,text="Qualification:",font=("arial",20)).place(x="550",y="320")
-f2=tkinter.Checkbutton(win,text="SSC").place(x=800,y=330)
-f2=tkinter.Checkbutton(win,text="Inter").place(x=850,y=330)
-f2=tkinter.Checkbutton(win,text="BTech").place(x=900,y=330)
-f1=tkinter.Label(win,text="Country:",font=("arial",20)).place(x="550",y="360")
-List=["India","Uk","USA","AUS","England","Pakistan","Africa","Russia","China"]
-Var1=tkinter.StringVar()
-opt1=tkinter.OptionMenu(win,Var1,*List).place(x=800,y=370)
-f2=tkinter.Button(win,text="Submit").place(x=750,y=600)
-win.mainloop()
+html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .product-description {
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .add-to-cart-btn {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .cart-container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .cart-item {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Product Page</h1>
+    </header>
+
+    <div class="product-container">
+        <img src="product-image.jpg" alt="Product Image" class="product-image">
+        <h2>Product Title</h2>
+        <p class="product-description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eget justo vel massa luctus dignissim. 
+            Sed non neque ac augue fermentum varius. Integer euismod nisl ut ligula congue, vel ultrices velit facilisis.
+        </p>
+        <p class="product-price"><strong>Price:</strong> $99.99</p>
+        <button class="add-to-cart-btn" onclick="addToCart()">Add to Cart</button>
+    </div>
+
+    <div class="cart-container" id="cartContainer">
+        <h2>Shopping Cart</h2>
+        <!-- Cart items will be dynamically added here -->
+    </div>
+
+    <script>
+        function addToCart() {
+            const cartContainer = document.getElementById('cartContainer');
+            const cartItem = document.createElement('div');
+            cartItem.classList.add('cart-item');
+            cartItem.textContent = 'Product Title - $99.99'; // You can dynamically fetch product details
+            cartContainer.appendChild(cartItem);
+        }
+    </script>
+
+</body>
+</html>
